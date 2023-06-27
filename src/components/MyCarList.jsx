@@ -15,7 +15,7 @@ function DeleteChecbox({ que, setQue, id }) {
   const [check, SetCheck] = useState(false);
   function HandleChange(e) {
     if (check) {
-      const filter = que.filter((el) => el != id);
+      const filter = que.filter((el) => el !== id);
       setQue([...filter]);
     } else {
       setQue([...que, id]);
@@ -53,7 +53,7 @@ export default function MyCarList() {
           bg="white"
           variant={"outline"}
           w="100%"
-          isDisabled={Delete.length > 1 || Delete.length == 0 ? true : false}
+          isDisabled={Delete.length > 1 || Delete.length === 0 ? true : false}
           onClick={() => navigate(`/edit/${Delete[0]}`)}
         >
           Edit
@@ -62,7 +62,7 @@ export default function MyCarList() {
           bg="white"
           variant={"outline"}
           w="100%"
-          isDisabled={Delete.length == 0 ? true : false}
+          isDisabled={Delete.length === 0 ? true : false}
           onClick={() => dispatch(DeleteCars(Delete))}
         >
           Delete

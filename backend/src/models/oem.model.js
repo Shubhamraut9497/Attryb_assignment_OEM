@@ -9,8 +9,7 @@ const oemSchema = new mongoose.Schema(
         mileage: { type: Number },
         power: { type: String },
         maxSpeed: { type: String },
-        provider: { type: mongoose.Schema.Types.ObjectId, ref: 'BUser', required: true },
-
+        provider: { type: mongoose.Schema.Types.ObjectId, ref: 'BUser', required: true }
     },
     { timestamps: true }
 );
